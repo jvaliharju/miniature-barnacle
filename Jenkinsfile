@@ -8,12 +8,11 @@ pipeline {
             }
         }
         stage('Test') {
-            lockableResources {
-                label('tredkopen')
-                resourceNumber(1)
-            }
             steps {
                 echo 'Testing..'
+                lock(label: 'tredkopen', variable: 'var') {
+                    echo "Resource locked: ${env.var}"
+                }
                 sleep 30
             }
         }
