@@ -12,8 +12,8 @@ pipeline {
                 echo 'Testing..'
                 lock(resource: null, label: 'tredkopen', variable: 'var') {
                     echo "Resource locked: ${env.var}"
+                    sleep 90
                 }
-                sleep 30
             }
         }
         stage('Deploy') {
