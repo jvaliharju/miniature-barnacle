@@ -10,7 +10,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                lock(resource: null, label: 'tredkopen', variable: 'var') {
+                lock(resource: null, label: 'TRE OPEN', variable: 'var') {
                     echo "Resource locked: ${env.var}"
                     sleep 90
                 }
